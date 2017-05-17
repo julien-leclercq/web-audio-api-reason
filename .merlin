@@ -1,0 +1,8 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx /Users/julien/Documents/persoWorkspace/web-audio-api-reason/node_modules/bs-platform/bin/bsppx.exe
+S /Users/julien/Documents/persoWorkspace/web-audio-api-reason/node_modules/bs-platform/lib/ocaml
+B /Users/julien/Documents/persoWorkspace/web-audio-api-reason/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -no-alias-deps -color always -w -40+6+7+27+32..39+44+45
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}
