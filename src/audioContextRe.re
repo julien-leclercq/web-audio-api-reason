@@ -1,10 +1,8 @@
+open WebAudioApiTypes;
+
 module AudioContextRe = {
 
-  type t;
-
-  /* shortcut on Js_typed_array.array_buffer */
-  type array_buffer = Js_typed_array.array_buffer;
-
+  type t = audio_context;
   type state = Suspended | Running | Closed;
 
   exception WrongState string;
@@ -14,7 +12,8 @@ module AudioContextRe = {
   external _current_time : t => float = "currentTime" [@@bs.get];
   external _sample_rate : t => float = "sampleRate" [@@bs.get];
   external _state : t => string = "state" [@@bs.get];
-  external _decode_audio_data : t => array_buffer = "decodeAudioData" [@@bs.send];
+  external _decode_audio_data : t => array_buffer => promise array_buffer = "decodeAudioData" [@@bs.send];
+  external _create_buffer_source : t => audio_buffer_source_node = "createBufferSource" [@@bs.send];
 
   let create_context () => _create_context ();
 
@@ -36,6 +35,8 @@ module AudioContextRe = {
     |> _state
     |> state_of_string;
 
-  let decode_audio_data context => _decode_audio_data context;
+  let decode_audio_data context array => _decode_audio_data context array;
+
+  let create_buffer_source context => _create_buffer_source context;
 
 };

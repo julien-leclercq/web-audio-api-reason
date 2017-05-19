@@ -1,7 +1,9 @@
+open WebAudioApiTypes;
+
 module AudioContextRe: {
 
   /* Abstract type to represent AudioContext of WebAudioApi */
-  type t;
+  type t = audio_context;
 
   /* Variant type to represent the state of an AudioContext */
   type state = Suspended | Running | Closed;
@@ -34,7 +36,7 @@ module AudioContextRe: {
   Asynchronously decodes audio file data contained in an ArrayBuffer.
   In this case, the ArrayBuffer is usually loaded from an XMLHttpRequest's response attribute after setting the responseType to arraybuffer.
   This method only works on complete files, not fragments of audio files. */
-  let decode_audio_data : t => Js_typed_array.array_buffer;
+  let decode_audio_data : t => array_buffer => promise array_buffer;
 
+  let create_buffer_source : t => audio_buffer_source_node;
 };
-
