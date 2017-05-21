@@ -16,4 +16,7 @@ module AudioBufferSource= {
   let create_audio_buffer_source_node = _create_audio_buffer_source_node;
 };
 
-module AudioBufferSourceNodeRe = AudioNodeRe.MakeAudioNode(AudioBufferSource);
+module AudioBufferSourceNodeRe = {
+  include AudioBufferSource;
+  include AudioNodeRe.MakeAudioNode(AudioBufferSource);
+};

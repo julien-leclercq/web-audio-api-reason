@@ -1,7 +1,7 @@
 open WebAudioApiTypes;
 
 module AudioBufferSourceNodeRe: {
-  include AudioNodeBase;
+  include AudioNodeRe.AudioNodeBase;
 
   let get_buffer : t => array_buffer;
 

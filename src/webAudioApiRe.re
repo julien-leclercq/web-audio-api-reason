@@ -1,3 +1,3 @@
-module AudioBufferSourceNodeRe = AudioBufferSourceNodeRe;
+module AudioBufferSourceNodeRe = AudioBufferSourceNodeRe.AudioBufferSourceNodeRe;
 
-module AudioContextRe = AudioContextRe;
+module AudioContextRe = AudioContextRe.AudioContextRe;
